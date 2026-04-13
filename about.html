@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About · Your Name</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.5fr;
+      gap: 52px; align-items: start;
+    }
+    .about-photo {
+      width: 100%; border-radius: var(--radius);
+      border: 2px solid var(--border); object-fit: cover;
+    }
+    .info-chip {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 10px; padding: 14px 18px;
+      margin-top: 14px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .chip-row { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; }
+    .chip-row span:first-child { font-size: 1.1rem; }
+    .chip-row strong { color: var(--text); }
+    .chip-row em { color: var(--muted); font-style: normal; }
+
+    .about-para { color: var(--muted); line-height: 1.82; font-size: 0.96rem; margin-bottom: 16px; }
+    .about-para strong { color: var(--blue); }
+
+    .stats-row {
+      display: flex; gap: 0; background: var(--bg);
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; margin-bottom: 28px;
+    }
+    .sbox { flex: 1; text-align: center; padding: 18px 10px; border-right: 1.5px solid var(--border); }
+    .sbox:last-child { border-right: none; }
+    .sbox-n { display: block; font-size: 1.5rem; font-weight: 800; color: var(--blue); }
+    .sbox-l { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .skill-box {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .skill-box:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .skill-box h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
+    .tags-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
+
+    /* Bars */
+    .bars { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 26px; }
+    .bars h4 { font-weight: 700; margin-bottom: 20px; }
+    .bar-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .bar-row > span { min-width: 120px; font-size: 0.84rem; font-weight: 600; color: var(--muted); }
+    .bar { flex: 1; height: 9px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .bar-fill {
+      height: 100%; border-radius: 99px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      animation: growBar 1.2s ease-out;
+    }
+    @keyframes growBar { from { width: 0; } }
+
+    @media (max-width: 760px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { max-width: 280px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">⚙ <span>Dhanashri</span></a>
+  <ul class="nav-links" id="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</nav>
+
+<main>
+
+  <div class="banner">
+    <div class="banner-inner">
+      <span class="banner-tag">// About Me</span>
+      <h1>The Person Behind<br/>the <em>Code</em></h1>
+      <p>Engineering student, curious builder, and occasional 2am debugger.</p>
+    </div>
+  </div>
+
+  <!-- BIO -->
+  <section class="section section-white">
+    <div class="about-grid">
+      <div>
+        <!-- Replace with your actual photo -->
+        <img class="about-photo" src="my_photo.jpg" alt="About Photo"/>
+        <div class="info-chip">
+          <div class="chip-row"><span>🏫</span><div><strong>College Name</strong><br/><em>B.Tech Computer Science</em></div></div>
+          <div class="chip-row"><span>📍</span><div><strong>Pune, Maharashtra</strong></div></div>
+          <div class="chip-row"><span>📅</span><div><strong>Batch 2022 – 2026</strong></div></div>
+          <div class="chip-row"><span>🎯</span><div><strong>Web · ML · Backend</strong></div></div>
+        </div>
+      </div>
+
+      <div>
+        <span class="section-label">// Who I Am</span>
+        <h2 class="section-title">A Quick Introduction</h2>
+
+        <div class="stats-row">
+          <div class="sbox"><span class="sbox-n">3+</span><span class="sbox-l">Projects</span></div>
+          <div class="sbox"><span class="sbox-n">8+</span><span class="sbox-l">Certificates</span></div>
+          <div class="sbox"><span class="sbox-n">1</span><span class="sbox-l">Hackathons</span></div>
+          <div class="sbox"><span class="sbox-n">9.0</span><span class="sbox-l">CGPA</span></div>
+        </div>
+
+        <p class="about-para">Hi! I'm <strong>Dhanashri</strong>, a first-year CSE student passionate about engineering at the intersection of software and hardware. I love building things that solve real problems.</p>
+        <p class="about-para">Whether it's a React dashboard, an ML model — I enjoy the full stack of engineering. Currently looking for <strong>internship opportunities</strong> where I can contribute and grow.</p>
+        <p class="about-para">Outside coding, I love hackathons, open-source contributions.</p>
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-blue">📬 Contact Me</a>
+          <!-- <a href="#" class="btn btn-ghost">📄 Download Resume</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section">
+    <span class="section-label">// Toolkit</span>
+    <h2 class="section-title">Skills & Technologies</h2>
+
+    <div class="skills-grid" style="margin-bottom:24px;">
+      <div class="skill-box">
+        <h4>💻 Languages</h4>
+        <div class="tags-wrap">
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span>
+          <span class="tag">JavaScript</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-box">
+        <h4>🌐 Web</h4>
+        <div class="tags-wrap">
+          <span class="tag">HTML/CSS</span><span class="tag">React</span>
+          <span class="tag">Node.js</span><span class="tag">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-box">
+        <h4>🤖 AI / ML</h4>
+        <div class="tags-wrap">
+          <span class="tag">TensorFlow</span><span class="tag">OpenCV</span>
+          <span class="tag">Pandas</span><span class="tag">Scikit-learn</span>
+        </div>
+      </div>
+      <div class="skill-box">
+        <h4>🔧 Hardware</h4>
+        <div class="tags-wrap">
+          <span class="tag">Arduino</span><span class="tag">ESP32</span>
+          <span class="tag">MQTT</span><span class="tag">Raspberry Pi</span>
+        </div>
+      </div>
+      <div class="skill-box">
+        <h4>🛠 Tools</h4>
+        <div class="tags-wrap">
+          <span class="tag">Git</span><span class="tag">VS Code</span>
+          <span class="tag">Figma</span><span class="tag">Linux</span>
+        </div>
+      </div>
+      <div class="skill-box">
+        <h4>☁️ Cloud</h4>
+        <div class="tags-wrap">
+          <span class="tag">AWS</span><span class="tag">Firebase</span>
+          <span class="tag">Vercel</span><span class="tag">Netlify</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bars">
+      <h4>Proficiency</h4>
+      <div class="bar-row"><span>Python</span><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+      <div class="bar-row"><span>C / C++</span><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+      <div class="bar-row"><span>JavaScript</span><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+      <div class="bar-row"><span>React</span><div class="bar"><div class="bar-fill" style="width:68%"></div></div></div>
+      <div class="bar-row"><span>ML / AI</span><div class="bar"><div class="bar-fill" style="width:62%"></div></div></div>
+      <div class="bar-row"><span>Embedded / IoT</span><div class="bar"><div class="bar-fill" style="width:72%"></div></div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="projects.html">Projects</a><a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p>Made with ❤️ by <strong>Your Name</strong> · Engineering Student · 2025</p>
+</footer>
+
+</body>
+</html>

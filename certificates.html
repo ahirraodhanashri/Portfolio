@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificates · Your Name</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /*
+    ══════════════════════════════════════════════
+    HOW TO ADD / EDIT A CERTIFICATE:
+
+    1. Copy any <a class="cert-card"> block below
+    2. Change href="..." to your certificate link
+       Examples:
+       - Coursera:  https://coursera.org/verify/XXXXXXXXXX
+       - NPTEL:     https://nptel.ac.in/noc/verify
+       - LinkedIn:  https://linkedin.com/learning/certificates/...
+       - Google Drive: https://drive.google.com/file/d/FILE_ID/view
+       - Local PDF: certificates/my-cert.pdf
+    3. Update the emoji icon, title, issuer, date
+    4. Change the ribbon label (Verified / Winner / Elite)
+    ══════════════════════════════════════════════
+    */
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    /* The whole card is a clickable link */
+    .cert-card {
+      display: flex; flex-direction: column;
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      color: var(--text); cursor: pointer;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      position: relative;
+    }
+    .cert-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+    }
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--blue);
+    }
+
+    /* Ribbon badge */
+    .cert-ribbon {
+      position: absolute; top: 14px; right: 14px;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+    }
+    .ribbon-blue { background: var(--blue-light); color: var(--blue); border: 1px solid rgba(26,111,239,0.2); }
+    .ribbon-gold { background: #fff8e0; color: #8a6000; border: 1px solid rgba(220,170,0,0.3); }
+    .ribbon-green { background: #e0fff5; color: #006644; border: 1px solid rgba(0,196,140,0.25); }
+    .ribbon-silver { background: #f0f0f5; color: #5a5a7a; border: 1px solid #d0d0e0; }
+
+    .cert-top { padding: 22px 18px 8px; }
+    .cert-icon { font-size: 2.2rem; display: block; margin-bottom: 4px; }
+
+    .cert-body { padding: 4px 18px 20px; flex: 1; display: flex; flex-direction: column; gap: 4px; }
+    .cert-body h4 { font-size: 0.97rem; font-weight: 800; line-height: 1.35; }
+    .cert-issuer { color: var(--muted); font-size: 0.81rem; }
+    .cert-date {
+      font-family: 'Space Mono', monospace;
+      color: var(--blue); font-size: 0.73rem; margin-bottom: 10px;
+    }
+
+    /* "Click to open" hint that appears on hover */
+    .cert-hint {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.78rem; font-weight: 700; color: var(--blue);
+      opacity: 0; transform: translateY(4px);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cert-card:hover .cert-hint { opacity: 1; transform: translateY(0); }
+
+    .hint-note {
+      text-align: center; color: var(--muted);
+      font-size: 0.83rem; margin-bottom: 28px;
+      background: var(--blue-light); border-radius: 10px;
+      padding: 12px 20px; display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">⚙ <span>YourName</span></a>
+  <ul class="nav-links" id="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="certificates.html" class="active">Certificates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</nav>
+
+<main>
+
+  <div class="banner">
+    <div class="banner-inner">
+      <span class="banner-tag">// Certificates</span>
+      <h1>My <em>Achievements</em></h1>
+      <p>Click any certificate card to open and verify it directly.</p>
+    </div>
+  </div>
+
+  <section class="section">
+
+    <p class="hint-note">👆 Click on any card below to open that certificate</p>
+
+    <div class="certs-grid">
+
+
+     <!--
+        ★ NPTEL
+        → Change href to your NPTEL verify link
+      -->
+      <a class="cert-card" href="codex.jpg" target="_blank">
+        <span class="cert-ribbon ribbon-green">🎓 Elite</span>
+        <div class="cert-top">
+          <span class="cert-icon">🐍</span>
+        </div>
+        <div class="cert-body">
+          <h4>CodeX</h4>
+          <p class="cert-issuer">MIT AOE</p>
+          <p class="cert-date">📅 January 2026</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a> 
+
+      <!--
+        ★ CERTIFICATE 1
+        → Change href to your real Coursera/NPTEL/etc link
+      -->
+      <a class="cert-card" href="https://coursera.org/verify/YOUR-ID-HERE" target="_blank">
+        <span class="cert-ribbon ribbon-blue">✅ Verified</span>
+        <div class="cert-top">
+          <span class="cert-icon">🎓</span>
+        </div>
+        <div class="cert-body">
+          <h4>Artificial Intelligence - Antropic</h4>
+          <p class="cert-issuer">Coursera · MIT Academy of Engineering</p>
+          <p class="cert-date">📅 March 2026</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a>
+
+
+      <!--
+        ★ HACKATHON WIN
+        → Change href to your certificate image / Google Drive link
+      -->
+      <a class="cert-card" href="datathon.jpg" target="_blank">
+        <span class="cert-ribbon ribbon-gold">🏆 Winner</span>
+        <div class="cert-top">
+          <span class="cert-icon">🏅</span>
+        </div>
+        <div class="cert-body">
+          <h4>Datathon</h4>
+          <p class="cert-issuer">MIT Academy of Engineering 2026</p>
+          <p class="cert-date">📅 March 2026</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a>
+
+      
+      <!--
+        ★ CERTIFICATE 2
+        → Change href to your Udemy certificate link
+      -->
+      <a class="cert-card" href="python.jpg" target="_blank">
+        <span class="cert-ribbon ribbon-blue">✅ Verified</span>
+        <div class="cert-top">
+          <span class="cert-icon">🌐</span>
+        </div>
+        <div class="cert-body">
+          <h4>Python - CISCCO</h4>
+          <p class="cert-issuer">CISCCO</p>
+          <p class="cert-date">📅 February 2026</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a>
+
+      <!--
+        ★ CERTIFICATE 3
+        → Change href to your AWS certificate verify link
+      -->
+      <a class="cert-card" href="https://aws.amazon.com/verification" target="_blank">
+        <span class="cert-ribbon ribbon-blue">✅ Verified</span>
+        <div class="cert-top">
+          <span class="cert-icon">☁️</span>
+        </div>
+        <div class="cert-body">
+          <h4>AWS Cloud Practitioner</h4>
+          <p class="cert-issuer">Amazon Web Services</p>
+          <p class="cert-date">📅 June 2024</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a>
+
+      
+
+      <!--
+        ★ RUNNER UP HACKATHON
+        → Change href to your certificate
+      -->
+      <!-- <a class="cert-card" href="#" target="_blank">
+        <span class="cert-ribbon ribbon-silver">🥈 Runner Up</span>
+        <div class="cert-top">
+          <span class="cert-icon">💡</span>
+        </div>
+        <div class="cert-body">
+          <h4>HackWithInfy 2023</h4>
+          <p class="cert-issuer">Infosys Hackathon</p>
+          <p class="cert-date">📅 August 2023</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a> -->
+
+      <!--
+        ★ GOOGLE
+        → Change href to your Google certificate link
+      -->
+      <!-- <a class="cert-card" href="https://grow.google/certificates" target="_blank">
+        <span class="cert-ribbon ribbon-blue">✅ Verified</span>
+        <div class="cert-top">
+          <span class="cert-icon">🎨</span>
+        </div>
+        <div class="cert-body">
+          <h4>Google UX Design</h4>
+          <p class="cert-issuer">Google · Coursera</p>
+          <p class="cert-date">📅 July 2023</p>
+          <span class="cert-hint">🔗 Open Certificate →</span>
+        </div>
+      </a> -->
+
+      <!--
+        ★ ADD YOUR OWN
+        Copy the block above, paste here, edit href + details
+      -->
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="projects.html">Projects</a><a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p>Made with ❤️ by <strong>Your Name</strong> · Engineering Student · 2025</p>
+</footer>
+
+</body>
+</html>

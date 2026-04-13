@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects · Your Name</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .proj-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .proj-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .proj-card img { width: 100%; height: 190px; object-fit: cover; }
+    .proj-body { padding: 20px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .proj-type {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem; font-weight: 700; color: var(--orange);
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .proj-body h3 { font-size: 1.05rem; font-weight: 800; }
+    .proj-body p { color: var(--muted); font-size: 0.86rem; line-height: 1.65; flex: 1; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .proj-links { display: flex; gap: 8px; margin-top: 4px; }
+    .proj-links a {
+      padding: 7px 14px; border-radius: 8px;
+      font-size: 0.78rem; font-weight: 700;
+      border: 1.5px solid var(--border);
+      color: var(--muted); background: var(--bg);
+      transition: all 0.18s;
+    }
+    .proj-links a:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .proj-links a.primary { background: var(--blue); color: #fff; border-color: var(--blue); }
+    .proj-links a.primary:hover { background: #0d55d0; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="nav-logo" href="index.html">⚙ <span>YourName</span></a>
+  <ul class="nav-links" id="nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="certificates.html">Certificates</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+</nav>
+
+<main>
+
+  <div class="banner">
+    <div class="banner-inner">
+      <span class="banner-tag">// Projects</span>
+      <h1>Things I've <em>Built</em></h1>
+      <p>Web apps, ML models, IoT hardware — a mix of everything I love about engineering.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 — replace details with your own -->
+      <!-- <div class="proj-card">
+        <img src="https://placehold.co/400x190/c8deff/1a3c5e?text=Smart+Home" alt="Smart Home"/>
+        <div class="proj-body">
+          <span class="proj-type">🔧 IoT · Web · 2024</span>
+          <h3>Smart Home Automation</h3>
+          <p>ESP32 + MQTT + React dashboard. Control home appliances in real-time via mobile or voice commands.</p>
+          <div class="proj-tags">
+            <span class="tag">ESP32</span><span class="tag">React</span>
+            <span class="tag">MQTT</span><span class="tag">Node.js</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="primary">🔗 Live Demo</a>
+            <a href="#">📂 GitHub</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- PROJECT 2 -->
+      <div class="proj-card">
+  <img src="https://placehold.co/400x190/dff0ff/1a3c5e?text=DSA+Tracker" alt="DSA Tracker"/>
+  <div class="proj-body">
+    <span class="proj-type">🌐 Web · 2026</span>
+    <h3>DSA Tracker</h3>
+    <p>A personal tracker to log and monitor your DSA practice. Track problems solved, topics covered, and your daily streak.</p>
+    <div class="proj-tags">
+      <span class="tag">HTML</span><span class="tag">CSS</span>
+      <span class="tag">JavaScript</span><span class="tag-green tag">Personal Tool</span>
+    </div>
+    <div class="proj-links">
+      <a href="#" class="primary">🔗 Live Demo</a>
+      <a href="#">📂 GitHub</a>
+    </div>
+  </div>
+</div>
+
+      <!-- PROJECT 3 -->
+      <div class="proj-card">
+        <img src="https://placehold.co/400x190/fff3cc/4a3a00?text=Campus+Portal" alt="Campus Portal"/>
+        <div class="proj-body">
+          <span class="proj-type">🌐 Full Stack · 2026</span>
+          <h3>Campus Event Portal</h3>
+          <p>Web app for managing college events with admin dashboard, email notifications, and QR code entry passes.</p>
+          <div class="proj-tags">
+            <span class="tag">React</span><span class="tag">Express</span>
+            <span class="tag">MongoDB</span><span class="tag-green tag">500+ Users</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="primary">🔗 Live Demo</a>
+            <a href="#">📂 GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <!-- <div class="proj-card">
+        <img src="https://placehold.co/400x190/ffe0e0/4a0a0a?text=Robot" alt="Robot"/>
+        <div class="proj-body">
+          <span class="proj-type">🔧 Embedded · 2023</span>
+          <h3>Obstacle Avoidance Robot</h3>
+          <p>Autonomous robot with ultrasonic sensors and Arduino. Real-time path planning demonstrated at tech fest.</p>
+          <div class="proj-tags">
+            <span class="tag">Arduino</span><span class="tag">C++</span>
+            <span class="tag-orange tag">Hardware</span>
+          </div>
+          <div class="proj-links">
+            <a href="#">📂 GitHub</a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- PROJECT 5 -->
+      <div class="proj-card">
+        <img src="https://placehold.co/400x190/e8d4ff/2a1a4a?text=AI+Chatbot" alt="AI Chatbot"/>
+        <div class="proj-body">
+          <span class="proj-type">🤖 AI · Web · 2026</span>
+          <h3>AI Study Assistant</h3>
+          <p>LLM-powered chatbot for students. Answers questions, summarizes notes, generates quizzes automatically.</p>
+          <div class="proj-tags">
+            <span class="tag">Python</span><span class="tag">Flask</span>
+            <span class="tag">React</span><span class="tag">OpenAI API</span>
+          </div>
+          <div class="proj-links">
+            <a href="#" class="primary">🔗 Live Demo</a>
+            <a href="#">📂 GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD MORE: copy a .proj-card block and edit it -->
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-nav">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="projects.html">Projects</a><a href="certificates.html">Certificates</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <p>Made with ❤️ by <strong>Your Name</strong> · Engineering Student · 2025</p>
+</footer>
+
+</body>
+</html>
